@@ -1,0 +1,42 @@
+#!/bin/bash
+echo "Ban muon nhap dau vao la IP bat dau va IP ket thuc hay dai mang?"
+echo "1. Nhap IP bat dau va IP ket thuc"
+echo "2. Nhap dai mang"
+echo "Chon (1 or 2):"
+read chon
+while [ ${chon} -ne 1 -a  ${chon} -ne 2 ] 
+   do
+        echo "Vui long nhap dung cu phap"
+        read chon
+  done
+
+function nhap-IP () {
+    rm -f $file
+    rm -f IP-online
+    rm -f IP-off
+    echo "Dia chi bat dau:"
+    read bd
+    echo "Dia chi ket thuc:"
+    read kt
+    
+    (fping -a -g $bd $kt > IP-online) > /dev/null 2>&1
+    (fping -u -g $bd $kt > IP-off) > /dev/null 2>&1
+    }
+
+
+function nhap-mang () {
+    rm -f IP-online
+    rm -f IP-off
+    echo "Nhap dai mang:"
+    read dm
+    (fping -a -g $dm > IP-online) > /dev/null 2>&1
+    (fping -u -g $dm > IP-off) > /dev/null 2>&1
+}
+
+
+if [ "${chon}" = "1" ]
+    then
+        nhap-IP
+    else
+        nhap-mang
+fi
