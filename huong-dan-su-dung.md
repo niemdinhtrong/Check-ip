@@ -1,5 +1,7 @@
 Đây là scrpt được sử dụng để kiểm tra những IP đang họat động và không hoạt động. Bạn có thể kiểm tra dải IP bằng cách nhập vào là địa chỉ IP đầu và địa chỉ IP cuối của dải IP muốn kiểm tra hoặc nhập vào cả một dải mạng để kiểm tra.
 
+Trước tiên máy của bạn đã cài đặt lệnh `fping`
+
 Chạy lệnh sau để clone tải file về
 
 ```

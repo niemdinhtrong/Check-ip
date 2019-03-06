@@ -33,12 +33,9 @@ function nhap-mang () {
     (fping -u -g $dm > IP-off) > /dev/null 2>&1
 }
 
-yum install fping > /dev/null 2>&1
-sudo apt-get install fping > /dev/null 2>&1
-
 if [ "${chon}" = "1" ]
     then
-        nhap-IP
+         nhap-IP
     else
-        nhap-mang
+         nhap-mang
 fi
